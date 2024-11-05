@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hiking Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Hike Reviews</h1>
+    </header>
+
+    <div id="myBtn">+ Add Reivew</div>
+    <hr />
+    <div id="addReviewContainer" class="hidden">
+      <!-- ADD INPUTS FOR ALL ITEMS -->
+      <input
+        type="text"
+        id="input-hike-name"
+        placeholder="Hike Name"
+        class="hike-name"
+      />
+      <input
+        type="text"
+        id="input-hike-location"
+        placeholder="Hike Location"
+        class="hike-location"
+      />
+      <input
+        type="number"
+        id="input-hike-miles"
+        placeholder="Miles"
+        class="hike-miles"
+      />
+      <input
+        type="number"
+        id="input-hike-rating"
+        min="0"
+        max="5"
+        placeholder="Rating (0-5)"
+        class="rating"
+      />
+      <textarea
+        name="Review"
+        id="input-hike-review"
+        placeholder="Write your review..."
+        class="hike-review"
+      ></textarea>
+      <input
+        type="text"
+        id="input-hike-picture"
+        placeholder="Image File Name"
+        class="hike-picture"
+      />
+      <div id="add-review-button" style="cursor: pointer">Add Review</div>
+    </div>
+
+    <!-- EDIT REVIEWS -->
+    <div id="editReviewContainer">
+      <h2>Edit A Hike</h2>
+      <input
+        type="text"
+        id="edit-hike-name"
+        placeholder="Hike Name"
+        class="hike-name"
+      />
+      <input
+        type="text"
+        id="edit-hike-location"
+        placeholder="Hike Location"
+        class="hike-location"
+      />
+      <input
+        type="number"
+        id="edit-hike-miles"
+        placeholder="Miles"
+        class="hike-miles"
+      />
+      <input
+        type="number"
+        id="edit-hike-rating"
+        min="0"
+        max="5"
+        placeholder="Rating (0-5)"
+        class="rating"
+      />
+      <textarea
+        name="Review"
+        id="edit-hike-review"
+        placeholder="Write your review..."
+        class="hike-review"
+      ></textarea>
+      <input
+        type="text"
+        id="edit-hike-picture"
+        placeholder="Image File Name"
+        class="hike-picture"
+      />
+    </div>
+
+    <section></section>
+
+    <script src="app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
+
+<!-- Recieve all messages AND create new messages -->
+
+<!-- 
+REVIEWS PAGE
+-rate with stars(icons)
+-pop up to add a review
+-display similar to the quoteTracker div elements
+-append new reviews onto the bottom of list
+
+-CHANGE FONT
+-->
