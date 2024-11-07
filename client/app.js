@@ -1,5 +1,10 @@
 console.log("connected");
 
+const apiUrl =
+  window.location.protocol === "file:"
+    ? "http://localhost:8080" // Local API server during development
+    : ""; //Production API
+
 let reviewsWrapper = document.querySelector("section");
 
 function addHikeReview(data) {
@@ -71,7 +76,7 @@ function addHikeReview(data) {
     editData += "&review=" + encodeURIComponent(editHikeReview.value);
     editData += "&picture=" + encodeURIComponent(editHikePicture.value);
 
-    fetch("http://localhost:8080/hikes/" + data.id, {
+    fetch(apiUrl + "/hikes/" + data.id, {
       method: "PUT",
       body: editData,
       headers: {
@@ -94,7 +99,7 @@ function addHikeReview(data) {
   // Delete functionality
   deleteButton.onclick = function () {
     if (confirm("Do you actually wanna delete this?") == true) {
-      fetch("http://localhost:8080/hikes/" + data.id, {
+      fetch(apiUrl + "/hikes/" + data.id, {
         method: "DELETE",
       })
         .then((response) => {
@@ -111,7 +116,7 @@ function addHikeReview(data) {
 }
 
 function loadReviewsFromServer() {
-  fetch("http://localhost:8080/hikes")
+  fetch(apiUrl + "/hikes")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -159,7 +164,7 @@ function addNewReview() {
     "&picture=" +
     encodeURIComponent(inputHikePicture.value);
 
-  fetch("http://localhost:8080/hikes", {
+  fetch(apiUrl + "/hikes", {
     method: "POST",
     body: data,
     headers: {

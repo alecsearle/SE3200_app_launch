@@ -72,6 +72,6 @@ def retreive_hike(hike_id):
         return f"Hike with id {hike_id} not found", 404, {"Access-Control-Allow-Origin" : "*"}
 
 def run():
-    app.run(port=8080)
+    app.run(port=8080, host='0.0.0.0')
 if __name__ == "__main__":
     run()
